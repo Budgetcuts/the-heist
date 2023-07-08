@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h5bh1stsbb3o"
+path="res://.godot/imported/sfx strongman speech 2.wav-9901ad2c9c0182fe1700ce19798dd55d.sample"
+
+[deps]
+
+source_file="res://music-and-sound/sfx strongman speech 2.wav"
+dest_files=["res://.godot/imported/sfx strongman speech 2.wav-9901ad2c9c0182fe1700ce19798dd55d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
