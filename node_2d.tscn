@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddnvuji8s8w6v"]
+
+[ext_resource type="Texture2D" uid="uid://diu4pb40emp6d" path="res://art/kenney_abstract-platformer/PNG/Other/blockGreen.png" id="1_hxhy0"]
+[ext_resource type="Texture2D" uid="uid://kmr4g4frw4al" path="res://art/kenney_abstract-platformer/PNG/Other/fluidBlue.png" id="2_ot48g"]
+[ext_resource type="Texture2D" uid="uid://pc4ndid3suio" path="res://art/kenney_abstract-platformer/PNG/Enemies/enemyFloating_1.png" id="3_87f64"]
+[ext_resource type="Texture2D" uid="uid://ddpwdwcecscjp" path="res://art/kenney_abstract-platformer/PNG/Enemies/enemyFlying_1.png" id="4_c3j56"]
+[ext_resource type="Texture2D" uid="uid://bbwajfkavi25j" path="res://art/kenney_abstract-platformer/PNG/Enemies/enemySpikey_1.png" id="5_vfd50"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iib8c"]
+texture = ExtResource("1_hxhy0")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca5nh"]
+texture = ExtResource("2_ot48g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dmy78"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_iib8c")
+sources/1 = SubResource("TileSetAtlasSource_ca5nh")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(822, 677)
+scale = Vector2(1.9122, 1.73579)
+tile_set = SubResource("TileSet_dmy78")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, -65536, 0, 0, -1, 0, 0, -2, 0, 0, -65538, 0, 0, 65534, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 1, 0, 0, -65535, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131073, 0, 0, -131074, 0, 0, -196607, 0, 0, -196608, 0, 0, -196606, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0)
+
+[node name="StrongMan" type="Sprite2D" parent="."]
+position = Vector2(764, 401.5)
+scale = Vector2(1.2381, 1.125)
+texture = ExtResource("3_87f64")
+
+[node name="Hacker" type="Sprite2D" parent="."]
+position = Vector2(646, 406)
+scale = Vector2(1.21875, 1.15789)
+texture = ExtResource("4_c3j56")
+
+[node name="Thief" type="Sprite2D" parent="."]
+position = Vector2(879, 393)
+scale = Vector2(1.65625, 1.375)
+texture = ExtResource("5_vfd50")
