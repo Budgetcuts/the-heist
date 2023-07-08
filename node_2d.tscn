@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bbwajfkavi25j" path="res://art/kenney_abstract-platformer/PNG/Enemies/enemySpikey_1.png" id="5_vfd50"]
 [ext_resource type="Script" path="res://StrongManBody.gd" id="6_56tr7"]
 [ext_resource type="Texture2D" uid="uid://cg5dttjkrah3u" path="res://art/kenney_abstract-platformer/PNG/Items/blueGem.png" id="6_njmuq"]
-[ext_resource type="AudioStream" uid="uid://cixr20alytgsr" path="res://music-and-sound/GMTK_2023_a.wav" id="10_dojef"]
 [ext_resource type="Script" path="res://Camera.gd" id="10_gtqm6"]
+[ext_resource type="AudioStream" uid="uid://bxcix8lv8h6fi" path="res://music-and-sound/GMTK 2023 ai_saturday.wav" id="11_qif67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iib8c"]
 texture = ExtResource("1_hxhy0")
@@ -83,7 +83,7 @@ scale = Vector2(0.85685, 1.52559)
 script = ExtResource("10_gtqm6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_dojef")
+stream = ExtResource("11_qif67")
 volume_db = -24.0
 autoplay = true
 mix_target = 1
