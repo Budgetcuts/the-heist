@@ -27,8 +27,8 @@ func remarkOutcome(currentRemark, PreviousRemark):
 	else:
 		remarkCounter = 0
 	for i in remarkCounter:
-		if(randf_range(1,3) == 2):
-			print("hi")
+		if((randi()%3+1) == 2):
+			print("ineffective")
 		
 
 
@@ -38,5 +38,4 @@ func _on_item_list_item_selected(index):
 
 
 func _on_button_pressed():
-	print("pressed")
 	take_turn() # Replace with function body.
