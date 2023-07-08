@@ -88,4 +88,13 @@ volume_db = -24.0
 autoplay = true
 mix_target = 1
 
+[node name="Button" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 122.0
+offset_right = 421.0
+offset_bottom = 153.0
+scale = Vector2(2.34598, 2.33329)
+text = "Proceed?"
+
 [connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
