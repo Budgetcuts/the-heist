@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddnvuji8s8w6v"]
+[gd_scene load_steps=15 format=3 uid="uid://ddnvuji8s8w6v"]
 
 [ext_resource type="Texture2D" uid="uid://diu4pb40emp6d" path="res://art/kenney_abstract-platformer/PNG/Other/blockGreen.png" id="1_hxhy0"]
 [ext_resource type="Script" path="res://game_check.gd" id="1_xk4qy"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bbwajfkavi25j" path="res://art/kenney_abstract-platformer/PNG/Enemies/enemySpikey_1.png" id="5_vfd50"]
 [ext_resource type="Script" path="res://StrongManBody.gd" id="6_56tr7"]
 [ext_resource type="Texture2D" uid="uid://cg5dttjkrah3u" path="res://art/kenney_abstract-platformer/PNG/Items/blueGem.png" id="6_njmuq"]
+[ext_resource type="AudioStream" uid="uid://cixr20alytgsr" path="res://music-and-sound/GMTK_2023_a.wav" id="10_dojef"]
+[ext_resource type="Script" path="res://Camera.gd" id="10_gtqm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iib8c"]
 texture = ExtResource("1_hxhy0")
@@ -25,7 +27,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_iib8c")
 sources/1 = SubResource("TileSetAtlasSource_ca5nh")
 
-[node name="Vault" type="Node2D"]
+[node name="VaultScene" type="Node2D"]
 position = Vector2(0, -2)
 script = ExtResource("1_xk4qy")
 
@@ -51,16 +53,22 @@ position = Vector2(-239.799, -216.757)
 scale = Vector2(1.21875, 1.15789)
 texture = ExtResource("4_c3j56")
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Hacker"]
+
 [node name="Thief" type="Sprite2D" parent="."]
 position = Vector2(1.20068, -224.757)
 scale = Vector2(1.65625, 1.375)
 texture = ExtResource("5_vfd50")
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Thief"]
+
 [node name="ItemList" type="ItemList" parent="."]
-offset_left = 427.201
-offset_top = -296.757
-offset_right = 674.201
-offset_bottom = -67.7573
+offset_left = 313.0
+offset_top = -319.0
+offset_right = 570.0
+offset_bottom = -230.0
+allow_search = false
+auto_height = true
 item_count = 3
 item_0/text = "Insult"
 item_0/icon = ExtResource("6_njmuq")
@@ -70,4 +78,14 @@ item_2/text = "Quiz"
 item_2/icon = ExtResource("6_njmuq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
 scale = Vector2(0.85685, 1.52559)
+script = ExtResource("10_gtqm6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_dojef")
+volume_db = -24.0
+autoplay = true
+mix_target = 1
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
